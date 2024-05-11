@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_bg"
+    android:gravity="center_horizontal"
+    android:paddingBottom="90dp">
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/dialog_bg"
+        android:orientation="vertical">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/person1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/person1"
+            app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/person2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/person2"
+            app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/person3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:src="@drawable/person3"
+            app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/person4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/person4"
+            app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/person5"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/person5"
+            app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/person6"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:layout_marginTop="12dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/person6"
+            app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/person7"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/person7"
+            app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/person8"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/person8"
+            app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/person9"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="2"
+            android:layout_column="2"
+            android:layout_marginTop="12dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/person9"
+            app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+    </GridLayout>
+
+
+</LinearLayout>

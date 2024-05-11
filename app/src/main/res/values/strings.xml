@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Quiz land</string>
+    <string name="create_quiz">Create Quiz</string>
+    <string name="single_player">Single Player</string>
+    <string name="multi_player">Multi Player</string>
+    <string name="quiz_categories">Quiz Categories</string>
+    <string name="see_all">See all</string>
+    <string name="art">Art</string>
+    <string name="sport">Sport</string>
+    <string name="history">History</string>
+    <string name="science">Science</string>
+    <string name="complete_all_levels_to_earn_1000_coins">Complete All Levels To\nEarn 1000 Coins</string>
+    <string name="start_now">Start Now</string>
+    <string name="home">Home</string>
+    <string name="board">Board</string>
+    <string name="favorites">Favorites</string>
+    <string name="profile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="question_count">%1$d/%2$d</string>
+    <string name="quiz_land">QuizLand</string>
+    <string name="welcome_message">Hi, %1$s</string>
+    <string name="you_ve_completed_every_possible_level">You\'ve completed every possible level</string>
+    <string name="this_is_your_quizland_account_you_can_complete_levels_and_earn_coins_and_compete_with_other_users_good_luck">This is your QuizLand account.You can complete levels and earn coins and compete with other users. Good luck</string>
+    <string name="get_start">GET START</string>
+    <string name="this_section_is_not_currently_implemented">This section is not currently implemented</string>
+</resources>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg_color"
+    android:gravity="center|top"
+    android:orientation="vertical"
+    tools:context=".presentation.screens.profile.ProfileFragment">
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/navy_bg"
+        android:gravity="end"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/user_img"
+        app:layout_constraintTop_toTopOf="@+id/user_img">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/garnet" />
+
+        <TextView
+            android:id="@+id/coins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:text="2000"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="4dp"
+            android:src="@drawable/plus" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/navy_bg"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/linearLayout3"
+        app:layout_constraintStart_toStartOf="@id/linearLayout3"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout3">
+
+        <TextView
+            android:id="@+id/reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:text="Reset"
+            android:textColor="@color/white"
+            android:textSize="21sp" />
+    </LinearLayout>
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/user_img"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="34dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/person1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/user_img"
+        app:layout_constraintStart_toStartOf="@+id/user_img"
+        app:layout_constraintTop_toBottomOf="@+id/user_img">
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Allie"
+            android:textColor="@color/white"
+            android:textSize="32sp" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="-8dp"
+            android:src="@drawable/editing" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/navy_bg"
+        android:orientation="vertical"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:text="@string/this_is_your_quizland_account_you_can_complete_levels_and_earn_coins_and_compete_with_other_users_good_luck"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="26sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/get_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="26dp"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/navy_bg"
+        android:padding="12dp"
+        android:text="@string/get_start"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

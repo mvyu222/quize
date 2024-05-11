@@ -19,5 +19,4 @@ sealed class QuestionState {
         val point: Int
     ) : QuestionState()
 
-
 }

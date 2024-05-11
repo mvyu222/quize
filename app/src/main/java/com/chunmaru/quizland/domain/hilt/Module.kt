@@ -2,6 +2,7 @@ package com.chunmaru.quizland.domain.hilt
 
 import android.content.Context
 import androidx.room.Room
+import com.chunmaru.quizland.data.converters.QuestionListConverter
 import com.chunmaru.quizland.data.db.QuestionDataBase
 import com.chunmaru.quizland.data.db.dao.QuestionDao
 import com.chunmaru.quizland.data.db.repositories.QuestionRepository
@@ -37,7 +38,7 @@ object Module {
     @Singleton
     @Provides
     fun provideQuestionRepository(questionDao: QuestionDao): QuestionRepository {
-        return QuestionRepositoryImpl(questionDao)
+        return QuestionRepositoryImpl(questionDao, QuestionListConverter())
     }
 
 

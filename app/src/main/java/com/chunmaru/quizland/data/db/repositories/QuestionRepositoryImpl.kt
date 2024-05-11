@@ -2,32 +2,34 @@ package com.chunmaru.quizland.data.db.repositories
 
 
 import android.util.Log
+import com.chunmaru.quizland.data.converters.QuestionListConverter
 import com.chunmaru.quizland.data.models.QuestionModel
 import com.chunmaru.quizland.data.db.dao.QuestionDao
-import com.chunmaru.quizland.data.db.model.toQuestionsModel
 import java.lang.Exception
 
 class QuestionRepositoryImpl(
-    private val questionDao: QuestionDao
+    private val questionDao: QuestionDao,
+    private val questionConverter: QuestionListConverter
 ) : QuestionRepository {
 
     override suspend fun getAllQuestion(): List<QuestionModel> {
-        return questionDao.getAllQuestions().toQuestionsModel()
+        return questionConverter.toQuestionsModelList(
+            questionDao.getAllQuestions()
+        )
     }
 
     override suspend fun insertQuestion(questionModel: QuestionModel, onSuccess: () -> Unit) {
         try {
-            questionDao.insert(questionModel.toQuestionModelDb())
+            questionDao.insert(questionConverter.getConverter().toQuestionModelDb(questionModel))
             onSuccess()
         } catch (e: Exception) {
             Log.d("MyTag", "insertQuestion: error : $e ")
         }
-
     }
 
     override suspend fun deleteQuestion(questionModel: QuestionModel, onSuccess: () -> Unit) {
         try {
-            questionDao.delete(questionModel.toQuestionModelDb())
+            questionDao.delete(questionConverter.getConverter().toQuestionModelDb(questionModel))
             onSuccess()
         } catch (e: Exception) {
             Log.d("MyTag", "deleteQuestion: error : $e ")
@@ -36,18 +38,22 @@ class QuestionRepositoryImpl(
 
     override suspend fun getQuestionByCategory(category: String): List<QuestionModel> {
         return if (category == "none") {
-            questionDao.getQuestionWithOutCategory().toQuestionsModel()
+            questionConverter.toQuestionsModelList(questionDao.getQuestionWithOutCategory())
         } else {
-            questionDao.getQuestionsByCategory(category).toQuestionsModel()
+            questionConverter.toQuestionsModelList(questionDao.getQuestionsByCategory(category))
         }
-
     }
 
     override suspend fun getQuestionByCategoryLimit(
         category: String,
         limit: Int
     ): List<QuestionModel> {
-        return questionDao.getQuestionsByCategoryLimit(category, limit).toQuestionsModel()
+        return questionConverter.toQuestionsModelList(
+            questionDao.getQuestionsByCategoryLimit(
+                category,
+                limit
+            )
+        )
     }
 
     override suspend fun setsQuestionPassState(passedQuestion: List<Int>) {
@@ -65,6 +71,4 @@ class QuestionRepositoryImpl(
             Log.d("MyTag", "resetQuestionPass: $e ")
         }
     }
-
-
 }

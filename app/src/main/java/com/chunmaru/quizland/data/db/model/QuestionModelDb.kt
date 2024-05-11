@@ -16,23 +16,4 @@ data class QuestionModelDb(
     @ColumnInfo val correctAnswer: String,
     @ColumnInfo val score: Int,
     @ColumnInfo val isPass: Boolean = false,
-) {
-
-    fun toQuestionModel(): QuestionModel {
-
-        return QuestionModel(
-            id = this.id,
-            question = this.question,
-            image = this.image ?: "default2",
-            category = this.category,
-            answers = Converters.fromJson(this.answers),
-            correctAnswer = this.correctAnswer,
-            score = this.score
-        )
-    }
-
-}
-
-fun List<QuestionModelDb>.toQuestionsModel(): List<QuestionModel> {
-    return this.map { it.toQuestionModel() }
-}
+)

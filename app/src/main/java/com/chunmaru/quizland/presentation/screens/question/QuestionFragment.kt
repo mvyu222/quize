@@ -101,6 +101,8 @@ class QuestionFragment : Fragment() {
                 QuestionState.QuestionsCompleted -> {
                     questionCompleteHandle()
                 }
+
+                else -> {}
             }
 
         })

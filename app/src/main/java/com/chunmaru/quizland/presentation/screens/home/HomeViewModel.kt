@@ -5,11 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.chunmaru.quizland.data.db.repositories.QuestionRepository
-import com.chunmaru.quizland.data.models.CategoryConst
-import com.chunmaru.quizland.data.models.QuestionModel
 import com.chunmaru.quizland.data.models.UserModel
-import com.chunmaru.quizland.data.storage.DataStorageManager
 import com.chunmaru.quizland.data.storage.IDataStorageManager
+import com.chunmaru.quizland.data.storage.LoggingDataStorageManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -17,7 +15,7 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val questionRepository: QuestionRepository,
-    private val dataStorageManager: IDataStorageManager
+    private val dataStorageManager: LoggingDataStorageManager
 ) : ViewModel() {
 
 

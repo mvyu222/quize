@@ -8,6 +8,7 @@ import com.chunmaru.quizland.data.db.dao.QuestionDao
 import com.chunmaru.quizland.data.db.repositories.QuestionRepository
 import com.chunmaru.quizland.data.db.repositories.QuestionRepositoryImpl
 import com.chunmaru.quizland.data.storage.DataStorageManager
+import com.chunmaru.quizland.data.storage.IDataStorageManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -44,7 +45,7 @@ object Module {
 
     @Singleton
     @Provides
-    fun provideStorageManager(@ApplicationContext context: Context): DataStorageManager {
+    fun provideStorageManager(@ApplicationContext context: Context): IDataStorageManager {
         return DataStorageManager(context)
     }
 

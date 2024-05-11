@@ -9,6 +9,7 @@ import com.chunmaru.quizland.data.models.CategoryConst
 import com.chunmaru.quizland.data.models.QuestionModel
 import com.chunmaru.quizland.data.models.UserModel
 import com.chunmaru.quizland.data.storage.DataStorageManager
+import com.chunmaru.quizland.data.storage.IDataStorageManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -16,7 +17,7 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val questionRepository: QuestionRepository,
-    private val dataStorageManager: DataStorageManager
+    private val dataStorageManager: IDataStorageManager
 ) : ViewModel() {
 
 

@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.chunmaru.quizland.data.db.repositories.QuestionRepository
-import com.chunmaru.quizland.data.storage.DataStorageManager
+import com.chunmaru.quizland.data.storage.IDataStorageManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -16,7 +16,7 @@ import javax.inject.Inject
 @HiltViewModel
 class QuestionViewModel @Inject constructor(
     private val questionRepository: QuestionRepository,
-    private val dataStorageManager: DataStorageManager
+    private val dataStorageManager: IDataStorageManager
 ) : ViewModel() {
 
     private var categoryHasBeenSet = false

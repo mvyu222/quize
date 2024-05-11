@@ -14,9 +14,9 @@ private val Context.dataStorage: DataStore<Preferences> by preferencesDataStore(
 
 class DataStorageManager(
     private val context: Context
-) {
+) : IDataStorageManager {
 
-    fun getUser(): Flow<UserModel> {
+    override fun getUser(): Flow<UserModel> {
         return context.dataStorage.data.map { pref ->
             UserModel(
                 id = pref[StorageConst.USER_ID_KEY] ?: -1,
@@ -27,12 +27,12 @@ class DataStorageManager(
         }
     }
 
-    suspend fun addPoints(points: Int) {
+    override suspend fun addPoints(points: Int) {
         val score = getUserScore() + points
         setUserScore(score)
     }
 
-    suspend fun resetPoint() {
+    override suspend fun resetPoint() {
         context.dataStorage.edit { pref ->
             pref[StorageConst.USER_SCORE_KEY] = 0
         }
@@ -50,18 +50,15 @@ class DataStorageManager(
         }
     }
 
-
-    suspend fun setUserIcon(icon: String) {
+    override suspend fun setUserIcon(icon: String) {
         context.dataStorage.edit { pref ->
             pref[StorageConst.USER_ICON_KEY] = icon
         }
     }
 
-    suspend fun setUserName(name: String) {
+    override suspend fun setUserName(name: String) {
         context.dataStorage.edit { pref ->
             pref[StorageConst.USER_NAME_KEY] = name
         }
     }
-
-
 }

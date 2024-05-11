@@ -7,13 +7,14 @@ import androidx.lifecycle.viewModelScope
 import com.chunmaru.quizland.data.db.repositories.QuestionRepository
 import com.chunmaru.quizland.data.models.UserModel
 import com.chunmaru.quizland.data.storage.DataStorageManager
+import com.chunmaru.quizland.data.storage.IDataStorageManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class ProfileViewModel @Inject constructor(
-    private val dataStorageManager: DataStorageManager,
+    private val dataStorageManager: IDataStorageManager,
     private val questionRepository: QuestionRepository
 ) : ViewModel() {
 

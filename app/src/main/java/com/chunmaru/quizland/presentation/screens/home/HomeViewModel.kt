@@ -34,25 +34,5 @@ class HomeViewModel @Inject constructor(
 
     }
 
-    fun insertData() {
-        viewModelScope.launch {
-            questionRepository.insertQuestion(
-                QuestionModel(
-                    id = 0,
-                    question = "What did I.M. Pei design outside the Louvre, in Paris?",
-                    answers = listOf("obelisk", "sarcophagus", "ziggurat", "pyramid"),
-                    correctAnswer = "pyramid",
-                    score = 2,
-                    category = CategoryConst.ART,
-                    image = null,
-                ),
-                onSuccess = {
-
-                }
-            )
-        }
-
-    }
-
 
 }

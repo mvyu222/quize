@@ -5,8 +5,9 @@ import androidx.room.Room
 import com.chunmaru.quizland.data.converters.QuestionListConverter
 import com.chunmaru.quizland.data.db.QuestionDataBase
 import com.chunmaru.quizland.data.db.dao.QuestionDao
+import com.chunmaru.quizland.data.db.repositories.DefaultQuestionRepositoryFactory
 import com.chunmaru.quizland.data.db.repositories.QuestionRepository
-import com.chunmaru.quizland.data.db.repositories.QuestionRepositoryImpl
+import com.chunmaru.quizland.data.db.repositories.QuestionRepositoryFactory
 import com.chunmaru.quizland.data.storage.DataStorageManager
 import com.chunmaru.quizland.data.storage.IDataStorageManager
 import dagger.Module
@@ -38,10 +39,23 @@ object Module {
 
     @Singleton
     @Provides
-    fun provideQuestionRepository(questionDao: QuestionDao): QuestionRepository {
-        return QuestionRepositoryImpl(questionDao, QuestionListConverter())
+    fun provideQuestionListConverter(): QuestionListConverter = QuestionListConverter()
+
+
+    @Singleton
+    @Provides
+    fun provideQuestionRepositoryFactory(
+        questionDao: QuestionDao,
+        questionListConverter: QuestionListConverter
+    ): QuestionRepositoryFactory {
+        return DefaultQuestionRepositoryFactory(questionDao, questionListConverter)
     }
 
+    @Singleton
+    @Provides
+    fun provideQuestionRepository(factory: QuestionRepositoryFactory): QuestionRepository {
+        return factory.createQuestionRepository()
+    }
 
     @Singleton
     @Provides

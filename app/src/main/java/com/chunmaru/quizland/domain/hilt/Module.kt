@@ -10,6 +10,7 @@ import com.chunmaru.quizland.data.db.repositories.QuestionRepository
 import com.chunmaru.quizland.data.db.repositories.QuestionRepositoryFactory
 import com.chunmaru.quizland.data.storage.DataStorageManager
 import com.chunmaru.quizland.data.storage.IDataStorageManager
+import com.chunmaru.quizland.data.storage.LoggingDataStorageManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -49,6 +50,14 @@ object Module {
         questionListConverter: QuestionListConverter
     ): QuestionRepositoryFactory {
         return DefaultQuestionRepositoryFactory(questionDao, questionListConverter)
+    }
+
+    @Singleton
+    @Provides
+    fun provideLoggingDataStorage(
+        dataStorageManager: IDataStorageManager
+    ): LoggingDataStorageManager {
+        return LoggingDataStorageManager(dataStorageManager)
     }
 
     @Singleton

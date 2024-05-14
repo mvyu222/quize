@@ -2,8 +2,6 @@ package com.chunmaru.quizland.data.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
-import com.chunmaru.quizland.data.db.dao.Converters
 import com.chunmaru.quizland.data.db.dao.QuestionDao
 import com.chunmaru.quizland.data.db.model.QuestionModelDb
 

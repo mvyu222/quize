@@ -76,13 +76,13 @@ class ProfileFragment : Fragment() {
 
     private fun showAlertDialogReset() {
         val alertDialog = AlertDialog.Builder(requireContext())
-            .setTitle("Reset Confirm")
-            .setMessage("Do you really want to reset your results?")
-            .setPositiveButton("Ok") { dialog, _ ->
+            .setTitle(getString(R.string.reset_confirm))
+            .setMessage(getString(R.string.do_you_really_want_to_reset_your_results))
+            .setPositiveButton(getString(R.string.ok)) { dialog, _ ->
                 viewModel.resetUserScore()
                 dialog.dismiss()
             }
-            .setNegativeButton("Cancel") { dialog, _ ->
+            .setNegativeButton(getString(R.string.cancel)) { dialog, _ ->
                 dialog.dismiss()
             }
             .create()

@@ -6,9 +6,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.chunmaru.quizland.data.db.repositories.QuestionRepository
 import com.chunmaru.quizland.data.models.UserModel
-import com.chunmaru.quizland.data.storage.DataStorageManager
 import com.chunmaru.quizland.data.storage.IDataStorageManager
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -23,7 +23,7 @@ class ProfileViewModel @Inject constructor(
     val userData: LiveData<UserModel> = _userData
 
     init {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO)  {
             dataStorageManager.getUser().collect {
                 _userData.postValue(it)
             }
@@ -32,21 +32,21 @@ class ProfileViewModel @Inject constructor(
     }
 
     fun setNewName(name: String) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO)  {
             dataStorageManager.setUserName(name)
             _userData.value = _userData.value?.copy(name = name)
         }
     }
 
     fun setNewIcon(icon: String) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO)  {
             dataStorageManager.setUserIcon(icon)
             _userData.value = _userData.value?.copy(pic = icon)
         }
     }
 
     fun resetUserScore() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             dataStorageManager.resetPoint()
             questionRepository.resetQuestionPass()
 

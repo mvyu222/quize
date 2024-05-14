@@ -3,8 +3,6 @@ package com.chunmaru.quizland.data.db.model
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.chunmaru.quizland.data.db.dao.Converters
-import com.chunmaru.quizland.data.models.QuestionModel
 
 @Entity(tableName = "question_table")
 data class QuestionModelDb(
